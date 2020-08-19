@@ -1,3 +1,5 @@
+@import './style.global';
+
 .App {
   text-align: center;
 }
@@ -25,7 +27,7 @@
 }
 
 .AppLink {
-  color: #61dafb;
+  color: $color--primary;
 }
 
 @keyframes App-logo-spin {
