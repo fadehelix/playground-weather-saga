@@ -1,0 +1,8 @@
+@import '~variables';
+
+.Content {
+  display: flex;
+  justify-content: center;
+  padding: $root__padding;
+  width: 100%;
+}
