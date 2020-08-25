@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import Higlight from 'react-highlighter';
 
 import style from './SearchResults.module.scss';
 
@@ -21,7 +22,12 @@ function SearchResults() {
         .map((location, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <div className={style.Item} key={`key-${index}`}>
-            {location}
+            <Higlight
+              search={new RegExp(search, 'i')}
+              matchClass={style.Higlight}
+            >
+              {location}
+            </Higlight>
           </div>
         ))}
     </section>
