@@ -4,6 +4,8 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/forbid-prop-types": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
     "prettier/prettier": "error"
   }
 }
