@@ -1,0 +1,13 @@
+@import '~variables';
+
+.Search {
+}
+
+.Input {
+  border: 0;
+  border-bottom: 1px solid white;
+
+  &:focus {
+    outline: none;
+  }
+}

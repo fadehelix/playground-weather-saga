@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Content, Sidebar, Search } from './components';
+import { Content, Sidebar, Search, SearchResults } from './components';
 
 import style from './App.module.scss';
 
@@ -9,6 +9,7 @@ function App() {
     <div className={style.App}>
       <Sidebar>
         <Search />
+        <SearchResults />
       </Sidebar>
       <Content>
         <header>

@@ -1,0 +1,21 @@
+@import '~variables';
+
+.SearchResults {
+  display: flex;
+  flex-flow: column nowrap;
+  font-weight: lighter;
+  padding: 3rem 0 0 0;
+}
+
+.Item {
+  cursor: pointer;
+  padding: 0.5rem;
+
+  &:hover,
+  &:active {
+    background: rgba(255, 255, 255, 0.4);
+  }
+}
+.Higlight {
+  font-weight: bold;
+}

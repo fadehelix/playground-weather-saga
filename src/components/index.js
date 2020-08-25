@@ -2,3 +2,4 @@
 export { default as Sidebar } from './Sidebar/Sidebar';
 export { default as Search } from './Search/Search';
 export { default as Content } from './Content/Content';
+export { default as SearchResults } from './SearchResults/SearchResults';
