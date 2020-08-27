@@ -1,5 +1,5 @@
 const locationTypes = {
-  SEARCH_LOCATION: 'SEARCH_LOCATION',
+  SET_LOCATION: 'SET_LOCATION',
 };
 
 export default locationTypes;

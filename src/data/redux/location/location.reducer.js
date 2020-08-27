@@ -6,7 +6,7 @@ const INITIAL_STATE = {
 
 const locationReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.SEARCH_LOCATION:
+    case actionTypes.SET_LOCATION:
       return {
         ...state,
         data: action.payload,
