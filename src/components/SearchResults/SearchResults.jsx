@@ -1,35 +1,50 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import classNames from 'classnames';
 import Higlight from 'react-highlighter';
+import { setLocationAction } from 'data/redux/location/location.actions';
 
 import style from './SearchResults.module.scss';
 
-const fakeResults = [
-  'new york',
-  'warsaw',
-  'oslo',
-  'berlin',
-  'madrid',
-  'london',
-];
-
 function SearchResults() {
-  const search = useSelector((state) => state.location.data);
+  const dispatch = useDispatch();
+  const results = useSelector((state) => state.search.results);
+  const search = useSelector((state) => state.search.phrase);
+  const currentLocation = useSelector((state) => state.location.data);
+
+  const handleChooseLocation = (location) => {
+    dispatch(setLocationAction(location));
+  };
+
+  if (!results) {
+    return <></>;
+  }
   return (
     <section className={style.SearchResults}>
-      {fakeResults
-        .filter((location) => location.includes(search))
-        .map((location, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <div className={style.Item} key={`key-${index}`}>
-            <Higlight
-              search={new RegExp(search, 'i')}
-              matchClass={style.Higlight}
+      {results &&
+        results
+          .filter((location) =>
+            location.title.toLowerCase().includes(search.toLowerCase())
+          )
+          .map((location) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <button
+              type="button"
+              className={classNames(style.Item, {
+                [style.ItemActive]:
+                  currentLocation && currentLocation.title === location.title,
+              })}
+              onClick={() => handleChooseLocation(location)}
+              key={`key-${location.title}`}
             >
-              {location}
-            </Higlight>
-          </div>
-        ))}
+              <Higlight
+                search={new RegExp(search, 'i')}
+                matchClass={style.Higlight}
+              >
+                {location.title}
+              </Higlight>
+            </button>
+          ))}
     </section>
   );
 }

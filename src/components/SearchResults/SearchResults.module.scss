@@ -8,13 +8,18 @@
 }
 
 .Item {
+  border: 0;
   cursor: pointer;
+  outline: 0;
   padding: 0.5rem;
 
   &:hover,
   &:active {
     background: rgba(255, 255, 255, 0.4);
   }
+}
+.ItemActive {
+  background: rgba(255, 255, 255, 0.4);
 }
 .Higlight {
   background-color: transparent;
