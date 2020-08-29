@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Content, Sidebar, Search, SearchResults } from './components';
+import { Content, Header, Sidebar, Search, SearchResults } from './components';
 
 import style from './App.module.scss';
 
@@ -13,10 +13,7 @@ function App() {
         <SearchResults />
       </Sidebar>
       <Content>
-        <header>
-          <h1>{(location && location.title) || 'Choose city'}</h1>
-          <p>Check date</p>
-        </header>
+        <Header location={location} />
       </Content>
     </div>
   );
