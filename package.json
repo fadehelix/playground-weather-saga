@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "classnames": "^2.2.6",
     "ky": "^0.23.0",
+    "ky-universal": "^0.8.1",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -22,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!ky)/\" --env=jsdom",
+    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

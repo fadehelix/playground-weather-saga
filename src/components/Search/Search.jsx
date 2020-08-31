@@ -9,12 +9,9 @@ import style from './Search.module.scss';
 
 function Search() {
   const dispatch = useCallback(useDispatch(), []);
-  // const stableDispatch = useCallback(dispatch, []);
 
   const [searchTerm, setSearchTerm] = useState('');
-
   const [isSearching, setIsSearching] = useState(false);
-
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   useEffect(

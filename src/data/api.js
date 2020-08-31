@@ -1,4 +1,4 @@
-import ky from 'ky';
+import ky from 'ky-universal';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
