@@ -4,3 +4,4 @@ export { default as Search } from './Search/Search';
 export { default as Content } from './Content/Content';
 export { default as Header } from './Content/Header/Header';
 export { default as SearchResults } from './SearchResults/SearchResults';
+export { default as Loader } from './Loader/Loader';

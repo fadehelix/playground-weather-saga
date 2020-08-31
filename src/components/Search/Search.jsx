@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { Loader } from 'components';
 import { useDispatch } from 'react-redux';
 import { setResults, setCurrentPhrase } from 'data/redux/search/search.actions';
 
@@ -42,7 +43,7 @@ function Search() {
         className={style.Input}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      {isSearching ? <span>loading</span> : null}
+      {isSearching ? <Loader /> : null}
     </div>
   );
 }
