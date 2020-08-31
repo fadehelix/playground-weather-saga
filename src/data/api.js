@@ -10,7 +10,6 @@ const searchLocations = (phrase) => {
     })
     .json();
 };
-
 const API = {
   searchLocations,
 };
