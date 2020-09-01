@@ -9,7 +9,7 @@ import style from './SearchResults.module.scss';
 function SearchResults() {
   const dispatch = useDispatch();
   const results = useSelector((state) => state.search.results);
-  const search = useSelector((state) => state.search.phrase);
+  const search = useSelector((state) => state.search.term);
   const currentLocation = useSelector((state) => state.location.data);
 
   const handleChooseLocation = (location) => {

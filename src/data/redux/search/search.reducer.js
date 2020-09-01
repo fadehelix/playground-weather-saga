@@ -1,16 +1,16 @@
 import actionTypes from './search.types';
 
 const INITIAL_STATE = {
-  phrase: '',
+  term: '',
   results: null,
 };
 
 const searchReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.SET_CURRENT_PHRASE:
+    case actionTypes.SET_CURRENT_TERM:
       return {
         ...state,
-        phrase: action.payload,
+        term: action.payload,
       };
     case actionTypes.SET_RESULTS:
       return {

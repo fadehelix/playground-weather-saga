@@ -2,11 +2,10 @@ import ky from 'ky-universal';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
-// TODO: rename 'phrase' to 'searchTerm'
-const searchLocations = (phrase) => {
+const searchLocations = (searchTerm) => {
   return ky
     .get(`${apiUrl}location/search/`, {
-      searchParams: { query: phrase },
+      searchParams: { query: searchTerm },
       retry: 0,
     })
     .json();

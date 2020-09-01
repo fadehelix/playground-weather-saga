@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Loader } from 'components';
 import { useDispatch } from 'react-redux';
-import { setResults, setCurrentPhrase } from 'data/redux/search/search.actions';
+import { setResults, setCurrentTerm } from 'data/redux/search/search.actions';
 
 import useDebounce from 'hooks/useDebounce';
 import API from 'data/api';
@@ -12,22 +12,22 @@ function Search() {
   const dispatch = useCallback(useDispatch(), []);
 
   const [searchTerm, setSearchTerm] = useState('');
-  const [isSearching, setIsSearching] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   useEffect(
     () => {
       const fetchData = async () => {
         if (!debouncedSearchTerm) {
-          dispatch(setCurrentPhrase(''));
+          dispatch(setCurrentTerm(''));
           dispatch(setResults([]));
           return;
         }
-        setIsSearching(true);
+        setIsLoading(true);
         const response = await API.searchLocations(debouncedSearchTerm);
-        dispatch(setCurrentPhrase(debouncedSearchTerm));
+        dispatch(setCurrentTerm(debouncedSearchTerm));
         dispatch(setResults(response));
-        setIsSearching(false);
+        setIsLoading(false);
       };
 
       fetchData();
@@ -43,7 +43,7 @@ function Search() {
         className={style.Input}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      {isSearching ? <Loader /> : null}
+      {isLoading ? <Loader /> : null}
     </div>
   );
 }
