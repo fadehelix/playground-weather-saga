@@ -1,7 +1,7 @@
 import actionTypes from './location.types';
 
 const INITIAL_STATE = {
-  data: {},
+  data: null,
 };
 
 const locationReducer = (state = INITIAL_STATE, action) => {
@@ -10,6 +10,11 @@ const locationReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: action.payload,
+      };
+    case actionTypes.SET_LOCATION_DETAILS:
+      return {
+        ...state,
+        details: action.payload,
       };
     default:
       return state;

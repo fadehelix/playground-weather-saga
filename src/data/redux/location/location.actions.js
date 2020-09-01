@@ -4,3 +4,8 @@ export const setLocationAction = (location) => ({
   type: actionTypes.SET_LOCATION,
   payload: location,
 });
+
+export const setLocationDetailsAction = (locationData) => ({
+  type: actionTypes.SET_LOCATION_DETAILS,
+  payload: locationData,
+});

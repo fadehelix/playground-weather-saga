@@ -13,7 +13,7 @@ function SearchResults() {
   const currentLocation = useSelector((state) => state.location.data);
 
   const handleChooseLocation = (location) => {
-    dispatch(setLocationAction(location));
+    dispatch(setLocationAction(location.woeid));
   };
 
   if (!results) {
