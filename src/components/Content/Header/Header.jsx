@@ -11,7 +11,10 @@ function Header({ location }) {
 }
 
 Header.propTypes = {
-  location: PropTypes.object.isRequired,
+  location: PropTypes.object,
+};
+Header.defaultProps = {
+  location: null,
 };
 
 export default Header;
