@@ -1,0 +1,28 @@
+@import '~variables';
+
+.WeatherDetails {
+  display: flex;
+  flex-flow: row wrap;
+  height: auto;
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.Current {
+  align-items: center;
+  display: flex;
+  height: 14rem;
+  justify-content: flex-start;
+  // padding-bottom: 2rem;
+  width: 100%;
+}
+.CurrentWeatherState {
+  align-items: center;
+  border-left: 1px solid $color--secondary;
+  color: $color--secondary;
+  display: flex;
+  font-size: 1.8rem;
+  height: 5rem;
+  padding: 0 0 0 2rem;
+  text-transform: uppercase;
+}
