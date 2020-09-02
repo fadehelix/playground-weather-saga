@@ -1,8 +1,9 @@
 @import '~variables';
 
 .Content {
+  align-items: center;
   display: flex;
-  justify-content: center;
+  flex-flow: column nowrap;
   padding: $root__padding;
   width: 100%;
 }

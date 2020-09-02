@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Header({ location }) {
+function Header({ locationDetails }) {
   return (
     <header>
-      {location ? (
+      {locationDetails ? (
         <>
-          <h1>{location.title}</h1>
+          <h1>{locationDetails.title}</h1>
           <p>Check date</p>
         </>
       ) : (
@@ -17,10 +17,10 @@ function Header({ location }) {
 }
 
 Header.propTypes = {
-  location: PropTypes.object,
+  locationDetails: PropTypes.object,
 };
 Header.defaultProps = {
-  location: null,
+  locationDetails: null,
 };
 
 export default Header;

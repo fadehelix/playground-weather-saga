@@ -8,8 +8,9 @@ import { Loader } from 'components';
 
 function LocationProvider({ children }) {
   const dispatch = useCallback(useDispatch(), []);
-  const locationId = useSelector((state) => state.location.data);
+  const locationId = useSelector((state) => state.location.id);
   const [isLoading, setIsLoading] = useState(false);
+  // TODO: Separate data source from component (e.g. to allow inject local object)
   useEffect(() => {
     const fetchData = async (lID) => {
       setIsLoading(true);

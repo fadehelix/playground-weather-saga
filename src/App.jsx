@@ -7,6 +7,7 @@ import {
   Search,
   SearchResults,
   LocationProvider,
+  WeatherDetails,
 } from './components';
 
 import style from './App.module.scss';
@@ -21,7 +22,8 @@ function App() {
       </Sidebar>
       <Content>
         <LocationProvider>
-          <Header location={location} />
+          <Header locationDetails={location} />
+          <WeatherDetails locationDetails={location} />
         </LocationProvider>
       </Content>
     </div>
