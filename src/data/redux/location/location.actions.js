@@ -1,7 +1,7 @@
 import actionTypes from './location.types';
 
 export const setLocationAction = (location) => ({
-  type: actionTypes.SET_LOCATION,
+  type: actionTypes.SET_LOCATION_ID,
   payload: location,
 });
 

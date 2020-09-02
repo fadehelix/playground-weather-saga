@@ -1,15 +1,16 @@
 import actionTypes from './location.types';
 
 const INITIAL_STATE = {
-  data: null,
+  id: null,
+  details: null,
 };
 
 const locationReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionTypes.SET_LOCATION:
+    case actionTypes.SET_LOCATION_ID:
       return {
         ...state,
-        data: action.payload,
+        id: action.payload,
       };
     case actionTypes.SET_LOCATION_DETAILS:
       return {
