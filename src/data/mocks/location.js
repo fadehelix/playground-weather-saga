@@ -1,4 +1,5 @@
-export default {
+export const Id = 2459115;
+export const Details = {
   consolidated_weather: [
     {
       id: 6358029604749312,
