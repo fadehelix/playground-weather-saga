@@ -1,3 +1,5 @@
+// TODO: remove mock before production
+// import { Id, Details } from 'data/mocks/location';
 import actionTypes from './location.types';
 
 const INITIAL_STATE = {

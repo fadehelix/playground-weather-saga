@@ -1,6 +1,8 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
+// TODO: remove mock before production
+// import { Details } from 'data/mocks/location';
 
 import { setLocationDetailsAction } from 'data/redux/location/location.actions';
 import API from 'data/api';
@@ -15,6 +17,8 @@ function LocationProvider({ children }) {
     const fetchData = async (lID) => {
       setIsLoading(true);
       const response = await API.fetchLocation(lID);
+      // TODO: remove mock before production
+      // const response = Details;
       dispatch(setLocationDetailsAction(response));
       setIsLoading(false);
     };

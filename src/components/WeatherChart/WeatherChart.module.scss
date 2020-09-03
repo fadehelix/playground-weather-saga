@@ -1,0 +1,10 @@
+@import '~variables';
+
+:export {
+  chartLineColor: $color--primary;
+}
+
+.Container {
+  height: 15rem;
+  width: 100%;
+}

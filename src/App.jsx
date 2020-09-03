@@ -8,6 +8,7 @@ import {
   SearchResults,
   LocationProvider,
   WeatherDetails,
+  WeatherChart,
 } from './components';
 
 import style from './App.module.scss';
@@ -23,7 +24,17 @@ function App() {
       <Content>
         <LocationProvider>
           <Header locationDetails={location} />
-          <WeatherDetails locationDetails={location} />
+          {location && (
+            <>
+              <WeatherDetails locationDetails={location} />
+              <section>
+                <h3>daily forecast</h3>
+                <WeatherChart
+                  data={location && location.consolidated_weather}
+                />
+              </section>
+            </>
+          )}
         </LocationProvider>
       </Content>
     </div>
