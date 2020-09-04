@@ -4,6 +4,11 @@
   background: $color--primary;
   color: white;
   height: 100%;
-  width: 450px;
   padding: $root__padding;
+  width: $sidebar__width--desktop;
+
+  @include mediaMobileMax {
+    height: auto;
+    width: 100%;
+  }
 }

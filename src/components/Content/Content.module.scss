@@ -5,5 +5,9 @@
   display: flex;
   flex-flow: column nowrap;
   padding: $root__padding;
-  width: 100%;
+  width: calc(100vw - #{$sidebar__width--desktop});
+
+  @include mediaMobileMax {
+    width: 100vw;
+  }
 }

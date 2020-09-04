@@ -1,8 +1,19 @@
-//Colors
+// Colors
 $color--primary: #76bcef;
 $color--secondary: #d3d3d3;
 $color--teriary: #111;
 $color--quaternary: #666;
 
-//Others
+// Others
 $root__padding: 6.5rem 4.5rem;
+
+// Sidebar
+$sidebar__width--desktop: 350px;
+$sidebar__width--mobile: 100vw;
+
+// RWD
+@mixin mediaMobileMax {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
