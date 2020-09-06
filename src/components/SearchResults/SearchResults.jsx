@@ -10,12 +10,11 @@ function SearchResults() {
   const dispatch = useDispatch();
   const results = useSelector((state) => state.search.results);
   const search = useSelector((state) => state.search.term);
-  const currentLocation = useSelector((state) => state.location.data);
+  const currentLocation = useSelector((state) => state.location.details);
 
-  const handleChooseLocation = (location) => {
+  function handleChooseLocation(location) {
     dispatch(setLocationAction(location.woeid));
-  };
-
+  }
   if (!results) {
     return <></>;
   }
@@ -30,6 +29,7 @@ function SearchResults() {
             // eslint-disable-next-line react/no-array-index-key
             <button
               type="button"
+              name={location.title}
               className={classNames(style.Item, {
                 [style.ItemActive]:
                   currentLocation && currentLocation.title === location.title,
