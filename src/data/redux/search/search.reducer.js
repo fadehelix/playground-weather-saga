@@ -3,6 +3,7 @@ import actionTypes from './search.types';
 const INITIAL_STATE = {
   term: '',
   results: null,
+  isLoading: false,
 };
 
 const searchReducer = (state = INITIAL_STATE, action) => {
@@ -12,10 +13,16 @@ const searchReducer = (state = INITIAL_STATE, action) => {
         ...state,
         term: action.payload,
       };
-    case actionTypes.SET_RESULTS:
+    case actionTypes.FETCH_RESULTS_START:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case actionTypes.FETCH_RESULTS_SUCCESS:
       return {
         ...state,
         results: action.payload,
+        isLoading: false,
       };
     default:
       return state;

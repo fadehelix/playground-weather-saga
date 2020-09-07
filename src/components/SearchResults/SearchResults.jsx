@@ -4,19 +4,22 @@ import classNames from 'classnames';
 import Higlight from 'react-highlighter';
 import { setLocationAction } from 'data/redux/location/location.actions';
 
+import { Loader } from 'components';
+
 import style from './SearchResults.module.scss';
 
 function SearchResults() {
   const dispatch = useDispatch();
   const results = useSelector((state) => state.search.results);
   const search = useSelector((state) => state.search.term);
+  const isSearchResultsLoading = useSelector((state) => state.search.isLoading);
   const currentLocation = useSelector((state) => state.location.details);
 
   function handleChooseLocation(location) {
     dispatch(setLocationAction(location.woeid));
   }
-  if (!results) {
-    return <></>;
+  if (isSearchResultsLoading) {
+    return <Loader />;
   }
   return (
     <section className={style.SearchResults}>
