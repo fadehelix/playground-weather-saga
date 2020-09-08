@@ -6,36 +6,42 @@ import {
   Sidebar,
   Search,
   SearchResults,
-  LocationProvider,
   WeatherDetails,
-  WeatherChart,
+  withLoader,
 } from './components';
 
 import style from './App.module.scss';
 
+const HeaderWithLoader = withLoader(Header);
+const WeatherDetailstWithLoader = withLoader(WeatherDetails);
+const SearchResultsWithLoader = withLoader(SearchResults);
+
 function App() {
   const location = useSelector((state) => state.location.details);
+  const isLocationLoading = useSelector((state) => state.location.isLoading);
+  const isSearchResultsLoading = useSelector((state) => state.search.isLoading);
+
   return (
     <div className={style.App}>
       <Sidebar>
         <Search />
-        <SearchResults />
+        <SearchResultsWithLoader isLoading={isSearchResultsLoading} />
       </Sidebar>
       <Content>
-        <LocationProvider>
-          <Header locationDetails={location} />
-          {location && (
-            <>
-              <WeatherDetails locationDetails={location} />
-              <section>
-                <h3>daily forecast</h3>
-                <WeatherChart
-                  data={location && location.consolidated_weather}
-                />
-              </section>
-            </>
-          )}
-        </LocationProvider>
+        <HeaderWithLoader
+          isLoading={isLocationLoading}
+          color={style.appColorPrimary}
+          locationDetails={location}
+        />
+        {location && (
+          <>
+            <WeatherDetailstWithLoader
+              isLoading={isLocationLoading}
+              color={style.appColorPrimary}
+              locationDetails={location}
+            />
+          </>
+        )}
       </Content>
     </div>
   );

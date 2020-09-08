@@ -1,5 +1,9 @@
 @import '~variables';
 
+:export {
+  appColorPrimary: $color--primary;
+}
+
 .App {
   display: flex;
   flex-direction: row;

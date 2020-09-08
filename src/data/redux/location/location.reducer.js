@@ -1,10 +1,9 @@
-// TODO: remove mock before production
-// import { Id, Details } from 'data/mocks/location';
 import actionTypes from './location.types';
 
 const INITIAL_STATE = {
   id: null,
   details: null,
+  isLoading: false,
 };
 
 const locationReducer = (state = INITIAL_STATE, action) => {
@@ -14,10 +13,16 @@ const locationReducer = (state = INITIAL_STATE, action) => {
         ...state,
         id: action.payload,
       };
-    case actionTypes.SET_LOCATION_DETAILS:
+    case actionTypes.FETCH_LOCATION_DETAILS_SUCCESS:
       return {
         ...state,
         details: action.payload,
+        isLoading: false,
+      };
+    case actionTypes.FETCH_LOCATION_DETAILS_START:
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return state;
